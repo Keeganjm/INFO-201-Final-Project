@@ -6,7 +6,7 @@ source("API_keys.R")
 options(shiny.sanitize.errors = FALSE)
 
 server <- function(input, output, sessions) {
-  # Shiva's
+  # Shiva's map tab
   ####################################
   reactive.function <- reactive({
     input.location <- closestTrendLocations(input$plot_click$y, input$plot_click$x)
@@ -14,7 +14,7 @@ server <- function(input, output, sessions) {
   })
   
   
-  # Generates the Choropleth map
+  # Generates the map
   output$plot <- renderPlot({
     
     data <- map_data(input$maptype) 
@@ -37,7 +37,7 @@ server <- function(input, output, sessions) {
                             chosen location: ", trending$name[1], ", ", trending$name[2], ", ", trending$name[3])
   })
   
-  # Teddy's
+  # Teddy's trends tab
   #####################################
   what.to.display <- reactive({
     return(input$trend.type)
@@ -57,8 +57,11 @@ server <- function(input, output, sessions) {
     return(us.trends)
   })
   
-  # Keegan's
+  # Keegan's search tab
   ####################################
+  
+  # A reactive dataframe of the most retweeted tweets
+  # with the input hashtag
   most.retweet <- reactive({
     if (input$searchString != "Enter Hashtag" & input$searchString != "" & input$searchString != "#") {
       searchString <- input$searchString
@@ -80,10 +83,12 @@ server <- function(input, output, sessions) {
     return(NULL)
   })
 
+  # Reactive date
   output.dates <- reactive({
     return(input$dates)
   })
-
+  
+  # Renders the most.retweet dataframe
   output$pop.tweets <- renderTable({
     if (!is.null(most.retweet())) {
       return(most.retweet())

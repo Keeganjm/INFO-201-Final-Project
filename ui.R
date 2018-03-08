@@ -7,13 +7,18 @@ source("server.R")
 
 ui <- fluidPage(
  tabsetPanel(
+    # The Introduction tab
     tabPanel("Introduction", includeMarkdown("README.md")),
+    
+    # The Trends tab
     tabPanel("Trends", fluidRow(align = 'center',
                                 helpText("What type of trends from the US would you like to see?"),
                                 radioButtons('trend.type', '', c('Hashtags', 'Non-Hashtags', 'Both!'), selected = 'Hashtags'),
                                 br(),
                                 column(12, dataTableOutput('table'))
     )),
+    
+    # The Map Tab
     tabPanel("Map", 
              # Gives a title to the shiny app
              titlePanel("What are the top 3 trending topics for a selected location"),
@@ -31,6 +36,8 @@ ui <- fluidPage(
                )
              )
     ),
+    
+    # The Search Tab
     tabPanel("Search",titlePanel("Most Retweeted Tweet with a Specific HashTag"),
              sidebarLayout(
                sidebarPanel(

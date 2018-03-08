@@ -14,4 +14,6 @@ This is by no means an exhaustive list of interesting things we have seen in our
 - Twitter trends follow major events, and trends move quickly between popular topics
 - Individual States have character and uniqueness, but in general national trends track locally
 
+One particularly interesting factoid was discovered when we asked the question "What things are unique to individual States but show an overall pattern?" We found that sports teams tend to stay between 1-3 million followers regardless of how large a State they are from. The only major outlier was the New England Patriots, with over 4 million followers, which is likely because of their pattern of success and that there are multiple states that they represent. An interesting follow up question might be if teams that win more have more followers.
+
 This is far from conclusive research, but based purely on tweets, it seems that Americans are far more similar than we are different. Maybe not a surprising result, but an interesting and comforting one nonetheless. We have provided the tools that we use to you, for you to investigate and come to your own conclusions.
