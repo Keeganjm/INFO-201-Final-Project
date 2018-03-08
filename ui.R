@@ -7,7 +7,7 @@ source("server.R")
 
 ui <- fluidPage(
  tabsetPanel(
-    tabPanel("Introduction", includeMarkdown("Abstract.md")),
+    tabPanel("Introduction", includeMarkdown("README.md")),
     tabPanel("Trends", fluidRow(align = 'center',
                                 helpText("What type of trends from the US would you like to see?"),
                                 radioButtons('trend.type', '', c('Hashtags', 'Non-Hashtags', 'Both!'), selected = 'Hashtags'),
